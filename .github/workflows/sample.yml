@@ -1,0 +1,10 @@
+name: sample
+ on:
+  push:
+ jobs:
+  name: build
+  runs-on: ubuntu-latest
+  steps:
+   - name: demo-sample
+     run: |
+      pwd
