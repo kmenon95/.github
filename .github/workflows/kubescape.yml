@@ -16,4 +16,4 @@ jobs:
       uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: results.sarif
-        account: ${{f80c0494-4b57-48cb-8aaa-4906b7b2d0f1.KUBESCAPE_ACCOUNT}}
+        account: ${{secrets.KUBESCAPE_ACCOUNT}}
