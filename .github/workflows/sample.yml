@@ -8,24 +8,4 @@ jobs:
      - name: demo
        run: |
         echo "hello world"
-        cat "# syntax=docker/dockerfile:1
-            FROM node:12-alpine
-            RUN apk add --no-cache python2 g++ make
-            WORKDIR /app
-            COPY . .
-            RUN yarn install --production
-            CMD ["node", "src/index.js"]
-            EXPOSE 3000" > Dockerfile.txt
-        sudo apt-get update
-        sudo apt-get install \
-         ca-certificates \
-         curl \
-         gnupg \
-         lsb-release
-         sudo mkdir -p /etc/apt/keyrings
-         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-         echo \
-         "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-         $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
-         sudo apt-get update
-         systemctl status docker
+        pwd
