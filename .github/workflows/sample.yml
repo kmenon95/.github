@@ -7,4 +7,5 @@ name: sample
   steps:
    - name: demo-sample
      run: |
+      echo 'Hello this is a sample demo'
       pwd
