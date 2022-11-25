@@ -2,7 +2,8 @@ name: sample
  on:
   push:
  jobs:
-  name: build
+  name: 
+  build:
   runs-on: ubuntu-latest
   steps:
    - name: demo-sample
