@@ -57,13 +57,9 @@ jobs:
          uses: apisec-inc/ethicalcheck-action@005fac321dd843682b1af6b72f30caaf9952c641
          with:
           # The OpenAPI Specification URL or Swagger Path or Public Postman collection URL.
-          oas-url: "http://netbanking.apisec.ai:8080/v2/api-docs"
+          oas-url: "http://testhtml5.vulnweb.com"
           # The email address to which the penetration test report will be sent.
-          email: "xxx@apisec.ai"
+          email: "kirti.menon.c@accenture.com"
           sarif-result-file: "ethicalcheck-results.sarif"
 
-       - name: Upload sarif file to repository
-         uses: github/codeql-action/upload-sarif@v2
-         with:
-          sarif_file: ./ethicalcheck-results.sarif
-
+ 
