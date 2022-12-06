@@ -16,28 +16,19 @@ jobs:
       actions: read
       contents: read
       security-events: write
-
-    strategy:
-      fail-fast: false
-    
+   
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
         languages: javascript
-        
-    - run: |
-        make bootstrap
-        make release
-       
+                   
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
 
-   
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
