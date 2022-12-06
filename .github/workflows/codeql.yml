@@ -32,10 +32,16 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         config-file: ./.github/codeql.yml
+    - name: "OPN CodeQL config"
+   #queries:
+        #- uses: security-and-quality
+        #- uses: github/codeql-go/ql/src/experimental@main
         # If you wish to specify custom queries, you can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
-        # queries: ./path/to/local/query, your-org/your-repo/queries@main
+   # queries:
+       # - uses: security-and-quality
+        #- uses: github/codeql-go/ql/src/experimental@main
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
