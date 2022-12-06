@@ -1,5 +1,0 @@
-name: "OPN CodeQL config"
-
-queries:
-  - uses: security-and-quality
-  - uses: github/codeql-go/ql/src/experimental@main
