@@ -29,10 +29,10 @@ steps:
       chmod 777 report
       docker run --rm -v $(pwd)/report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t https://example.com -r baseline-scan-report.html -s '/src' -o '/report' --format "HTML"
       true
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '*.html'
+#- task: PublishTestResults@2
+#  inputs:
+#    testResultsFormat: 'JUnit'
+#    testResultsFiles: '*.html'
 #- task: PublishPipelineArtifact@1
 #  inputs:
 #    targetPath: 'baseline-scan-report.html'
