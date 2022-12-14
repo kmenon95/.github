@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -28,8 +29,12 @@ steps:
       chmod 777 report
       docker run --rm -v $(pwd)/report:/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t https://example.com -r baseline-scan-report.html -s '/src' -o '/report' --format "HTML"
       true
-- task: PublishPipelineArtifact@1
+- task: PublishTestResults@2
   inputs:
-    targetPath: 'baseline-scan-report.html'
-    artifactType: 'pipeline'
-    artifactName: 'scan-results'  
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '*.html'
+#- task: PublishPipelineArtifact@1
+#  inputs:
+#    targetPath: 'baseline-scan-report.html'
+#    artifactType: 'pipeline'
+#    artifactName: 'scan-results'  
